@@ -3,7 +3,7 @@
  ---
 ## Unleash Your Knowlage Triva Knows No Bounds
 
-"WELCOME to TRIVIA BL0X! UNLEASH your inner code breaker! In a grit and grid of Html,JavaScript,and Css, only one box hold the right answer.Are you ready to Conquer the Challenge and prove your Tech prowess? DARE to endeavor the TRIVIA B1ox challenge!!!
+"WELCOME to TRIVIA BL0X! UNLEASH your inner code breaker! In a grit and grid of Html,JavaScript,and Css, only one box holds the right answer.Are you ready to Conquer the Challenge and prove your Tech prowess? DARE to endeavor the TRIVIA B1ox challenge!!!
 
 
 ---
