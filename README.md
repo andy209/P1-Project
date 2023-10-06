@@ -28,3 +28,5 @@
 ---
 ##### Tech stacks
     Tech stacks I plan on using are HTML ,Mostly JavaScript,and some css.
+##### Wire Frame 
+![wireframe](./wire.drawio.png)
