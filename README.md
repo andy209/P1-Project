@@ -23,7 +23,7 @@
     1. Maybe implement a health bar that takes damage when wrong answer is clicked.
     2. Give random questions and Answers after each round .
     3. Use a Timer for each question.
-
+    4. Render a start screen that begins with the text Press Enter Begin To Your Endeavor. 
 
 ---
 ##### Tech stacks
