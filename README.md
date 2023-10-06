@@ -1,5 +1,5 @@
-
-# Trivia B1ox
+![TriviPic](./Cutouttextblox.png)
+# Trivia B1oxg
  ---
 ## Unleash Your Knowlage Triva Knows No Bounds
 
@@ -30,3 +30,12 @@
     Tech stacks I plan on using are HTML ,Mostly JavaScript,and some css.
 ##### Wire Frame 
 ![wireframe](./wire.drawio.png)
+
+##### Potential Road-blocks
+    1.Starting off the code.
+    2.Snyntax Errors.
+    3.Problem solving.
+    4.Game Bugs.
+    5.Getting stuck on a problem.
+    6.using JavaScript.
+    7.Need help on most things ?
