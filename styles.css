@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-image: url(../viva-magenta.png);
+    margin: 0;
+    height: 100%;
+    font-family: 'Tinos', serif;
+    text-align: center;
+}
+
+header{ 
+    text-align: center;
+    color: rgb(43, 67, 226);
+    margin-bottom: 60px;
+
+}
+#btn{
+    grid-area: btn;
+    /* height: 20px;
+    width: 60%; */
+
+}
+#question{
+    background-color:aliceblue;
+    grid-area: question;
+    /* display: grid; */
+    /* height: 100px;
+    width: 500px;
+    margin-bottom: 60px; */
+    
+}
+.contanier{
+    grid-template-areas: 
+    "question ."
+    "btn ."
+    "one two"
+    "three four";
+    display: grid;
+    margin: 100px auto;
+    height: 100%;
+    width: 50%;
+    align-content: center;
+    justify-content: center;
+}
+ .grid-item{
+    /* display: grid; */
+    background-color: aliceblue;
+    height: 150px;
+    width: 250px;
+    color: red;
+    justify-content: center;
+ }
+ .one{
+    grid-area: one;
+ }
+ .two{
+    grid-area:two;
+ }
+ .three{
+    grid-area: three;
+ }
+ .four{
+    grid-area: four;
+ }
