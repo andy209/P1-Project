@@ -71,8 +71,8 @@ question.innerHTML = questionArray[0].question
 // gridItems.for( gridItem => {
 //     gridItem.innerHTML
 // })
- for(let i = 0; i < gridItems.length; i++){
- for(let j = 0; j < questionArray[0].answers.length; j++){
+ for(let i = 0; i < gridItems.length; i++) {
+ for(let j = 0; j < questionArray[0].answers.length; j++) {
  gridItems[i].innerHTML = questionArray[0].answers[j]
  }
  }

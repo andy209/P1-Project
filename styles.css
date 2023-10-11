@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url(../viva-magenta.png);
+    background-image: url('./viva-magenta.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
