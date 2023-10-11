@@ -3,59 +3,77 @@
 }
 body{
     background-image: url(../viva-magenta.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     margin: 0;
-    height: 100%;
+    min-height: 100vh;
     font-family: 'Tinos', serif;
     text-align: center;
 }
 
 header{ 
+    
     text-align: center;
-    color: rgb(43, 67, 226);
-    margin-bottom: 60px;
-
+    color: rgb(242,39,	60);
+    margin-top: 15vh;
 }
 #btn{
+    height: 111%;
+    width: 202%;
     grid-area: btn;
+    background-color:rgb(216, 87, 69);
     /* height: 20px;
     width: 60%; */
-
 }
 #question{
-    background-color:aliceblue;
+    height: 100px;
+    width: 201%;
+    background-color:rgba(232, 149, 107)	;
+    border: 4.68px solid rgb(238, 125, 147);
+    color: rgb(244, 57, 33);
     grid-area: question;
     /* display: grid; */
     /* height: 100px;
     width: 500px;
     margin-bottom: 60px; */
-    
+}
+#restart{
+    height: 111%;
+    width: 202%;
+    grid-area: restart;
+    background-color:  rgb(104, 25, 54);
 }
 .contanier{
+    
+    grid-gap: 5px;
     grid-template-areas: 
-    "question ."
     "btn ."
+    "question ."
     "one two"
-    "three four";
+    "three four"
+    "restart .";
     display: grid;
-    margin: 100px auto;
+    margin: 20px auto;
     height: 100%;
     width: 50%;
     align-content: center;
     justify-content: center;
 }
- .grid-item{
+.grid-item{
     /* display: grid; */
-    background-color: aliceblue;
+    background-color: rgba(180, 33, 65, 0.975);
     height: 150px;
     width: 250px;
-    color: red;
+    color: rgba(34, 23, 53);
     justify-content: center;
+    border: 5px solid rgba(59, 26, 59, 0.543)	;
  }
  .one{
     grid-area: one;
  }
  .two{
-    grid-area:two;
+    grid-area: two;
  }
  .three{
     grid-area: three;
