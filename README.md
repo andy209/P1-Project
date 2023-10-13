@@ -39,3 +39,4 @@
     5.Getting stuck on a problem.
     6.using JavaScript.
     7.Need help on most things ?
+#### Game pictures

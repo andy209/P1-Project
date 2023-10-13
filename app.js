@@ -10,9 +10,13 @@ gridItems.forEach(gridItem => gridItem.style.visibility = "hidden")
 function startGame(){
     question.style.visibility = "visible"
     gridItems.forEach(gridItem => gridItem.style.visibility = "visible")
+    for (let i = 0; i < 4; i++) {
+        playRound(i);
+      }
 }
 
 btn.addEventListener("click", startGame)
+
 
 const restart = document.querySelector("#restart")
 restart.style.visibility = "hidden"
@@ -26,7 +30,7 @@ const players = {
 };
 const questionArray = [
 {
-    question: "Which of the following is a valid CSS property to chhange color?",
+    question: "Which of the following is a valid CSS property to change color?",
     answers:[
         "font-color: #25555;",
         "text-format: blue;",
@@ -64,39 +68,80 @@ const questionArray = [
         " <-- This is the correct way to comment out in HTML --> "
     ],
     correctanswer: " <-- This is the correct way to comment out in HTML"
-
+    
 },
-    ];
-question.innerHTML = questionArray[0].question
-// gridItems.for( gridItem => {
-//     gridItem.innerHTML
-// })
-//  for(let i = 0; i < gridItems.length; i++) {
-//  for(let j = 0; j < questionArray[0].answers.length; j++) {
-//     console.log(gridItems[i])
-//     console.log(questionArray[0].answers[j])
-//  }
-//  }
-for (let i = 0; i < gridItems.length; i++) {
-    gridItems[i].textContent = questionArray[0].answers[i];
-    gridItems[i].addEventListener('click', select);
-}
-function select(event) {
-    console.log('click')
-    const clickedItem = event.target;
-    console.log(clickedItem)
-    if(clickedItem.innerHTML === questionArray[0].correctanswer) {
-        console.log('correct')
-    } else {
-        event.target.style.background = 'orange'
-        console.log('incorrect')
-    }
-  
-}
+];
 
-//  function (e) {
-//     if(e.target.textContent = 'grid-Items')
-//         return 
-// };
+// let playerHealth = 100;
+// const maxHealth =  100;
 
-// gridItems.forEach(gridItem)=> 
+// function updateHealthBar(){
+//     const healthBar = document.getElementBy("health");
+//     const heathPercentage = (playerHealth / maxHealth) * 100;
+//     healthBar.style.width = healthPercentage + "%";
+
+//     if(healthPrecentage <= 25){
+//         healthBar.style.background = "red";
+//     } else {
+//         healthBar.style.background = "green";
+//     }
+// } 
+// function takeDamge(damageAmount) {
+//     playerHealth -= damageAmount;
+//     is (playerHealth < 0) {
+//         playerHealth = 0;
+//     }
+//     updateHealthBar();
+// }
+// question.innerHTML = questionArray[0].question
+    // for (let i = 0; i < gridItems.length; i++) {
+        //     gridItems[i].textContent = questionArray[0].answers[i];
+        //     gridItems[i].addEventListener('click', select);
+        
+        // }
+        // function select(event) {
+            //     console.log('click')
+            //     const clickedItem = event.target;
+            //     console.log(clickedItem)
+            //     if(clickedItem.innerHTML === questionArray[0].correctanswer) {
+                
+                //         console.log('correct')
+                //         event.target.style.background = 'green'
+                //     } else {
+                    //         event.target.style.background = 'orange'
+                    //         console.log('incorrect')
+                    //     } 
+                    
+                    // }
+                    function playRound(questionIndex){
+                        // console.log(questionIndex)
+                        // console.log(questionArray[questionIndex])
+                        console.log(questionArray[questionIndex].answers)
+                        question.innerHTML = questionArray[questionIndex].question
+                        for (let i = 0; i < gridItems.length; i++) {
+                            gridItems[i].textContent = questionArray[questionIndex].answers[i];
+                            gridItems[i].addEventListener('click', select);
+                            
+                        }
+                        function select(event) {
+                            console.log('click')
+                            const clickedItem = event.target;
+                            console.log(clickedItem)
+                            if(clickedItem.innerHTML === questionArray[questionIndex].correctanswer) {
+                                
+                                console.log('correct')
+                                event.target.style.background = 'green'
+                            } else {
+                                event.target.style.background = 'orange'
+                                console.log('incorrect')
+                            } 
+                        } 
+                    }
+                    
+                    //  function (e) {
+                        //     if(e.target.textContent = 'grid-Items')
+                        //         return 
+                        // };
+                        
+                        // gridItems.forEach(gridItem)=> 
+                        
