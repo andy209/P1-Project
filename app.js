@@ -33,7 +33,7 @@ const questionArray = [
         "color: magenta;",
         "text-color: aqua;"
     ],
-    correctanswer: "color: blue;"
+    correctanswer: "color: magenta;"
 },
 {
     question: "What is the primary purpose of JavaScript?",
@@ -71,9 +71,32 @@ question.innerHTML = questionArray[0].question
 // gridItems.for( gridItem => {
 //     gridItem.innerHTML
 // })
- for(let i = 0; i < gridItems.length; i++) {
- for(let j = 0; j < questionArray[0].answers.length; j++) {
- gridItems[i].innerHTML = questionArray[0].answers[j]
- }
- }
- 
+//  for(let i = 0; i < gridItems.length; i++) {
+//  for(let j = 0; j < questionArray[0].answers.length; j++) {
+//     console.log(gridItems[i])
+//     console.log(questionArray[0].answers[j])
+//  }
+//  }
+for (let i = 0; i < gridItems.length; i++) {
+    gridItems[i].textContent = questionArray[0].answers[i];
+    gridItems[i].addEventListener('click', select);
+}
+function select(event) {
+    console.log('click')
+    const clickedItem = event.target;
+    console.log(clickedItem)
+    if(clickedItem.innerHTML === questionArray[0].correctanswer) {
+        console.log('correct')
+    } else {
+        event.target.style.background = 'orange'
+        console.log('incorrect')
+    }
+  
+}
+
+//  function (e) {
+//     if(e.target.textContent = 'grid-Items')
+//         return 
+// };
+
+// gridItems.forEach(gridItem)=> 

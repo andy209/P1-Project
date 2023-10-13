@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url('./viva-magenta.png');
+    background-image: url('/viva-magenta.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -15,7 +15,7 @@ body{
 header{ 
     
     text-align: center;
-    color: rgb(242,39,	60);
+    color: rgb(39, 242, 107);
     margin-top: 15vh;
 }
 #btn{
