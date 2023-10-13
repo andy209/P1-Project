@@ -3,7 +3,7 @@
  ---
 ## Unleash Your Knowlage Triva Knows No Bounds
 
-"WELCOME to TRIVIA BL0X! UNLEASH your inner code breaker! In a grit and grid of Html,JavaScript,and Css, only one box hold the right answer.Are you ready to Conquer the Challenge and prove your Tech prowess? DARE to endeavor the TRIVIA B1ox challenge!!!
+"WELCOME to TRIVIA BL0X! UNLEASH your inner code breaker! In a grit and grid of Html,JavaScript,and Css, only one box holds the correct answer.Are you ready to Conquer the Challenge and prove your Tech prowess? DARE to endeavor the TRIVIA B1ox challenge!!!
 
 
 ---
@@ -39,4 +39,7 @@
     5.Getting stuck on a problem.
     6.using JavaScript.
     7.Need help on most things ?
-#### Game pictures
+#### Current Road Blockes
+    Some Road Blocks I am currently facing include my background  image not loading and grid items are formated diffrently from text browser and not being able generate the correct list of answers for 
+#### Proud Parts 
+     When I was got my grid items to show up in my web browser I was very excited but was more impressed when I was able to implement my grid items answsers to change colors for the worng answers or correct answers green for correct and red for incorrect.Getting random question to be generated when be
