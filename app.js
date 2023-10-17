@@ -1,30 +1,63 @@
-const btn = document.querySelector("#btn")
+const currentScore = document.querySelector(".gameScore")
+const startbtnGame = document.querySelector("#btn")
+const nextbtn = document.querySelector('#next')
+const restart = document.querySelector("#restart")
 const gridItems = document.querySelectorAll(".grid-item")
-
 const question = document.querySelector("#question")
+
+let userScore = 0
+let round 
+
+
 console.log(question)
 question.style.visibility = "hidden"
-gridItems.forEach(gridItem => gridItem.style.visibility = "hidden")
+
+gridItems.forEach(gridItem => {
+    gridItem.style.visibility = "hidden"
+    gridItem.addEventListener('click', select)
+})
+
+nextbtn.style.visibility = "hidden"
 
 // console.log(restart)
 function startGame(){
+    round = 0
+    userScore = 0
+    currentScore.textContent = `${userScore}`
     question.style.visibility = "visible"
+    nextbtn.style.visibility = "visible"
     gridItems.forEach(gridItem => gridItem.style.visibility = "visible")
-    for (let i = 0; i < 4; i++) {
-        playRound(i);
+        playRound(round);
       }
+function nextRound(){
+    if(round >= 3 ){
+        nextbtn.style.visibility = 'hidden'
+        restart.style.visibility = 'visible' 
+        return;
+    } else {
+        gridItems.forEach(gridItem => gridItem.style.backgroundColor = 'rgba(180, 33, 65, 0.975)')
+        round++
+        playRound(round)
+        console.log('nextRound')
+    }
+    
+   
+
 }
+startbtnGame.addEventListener("click", startGame)
+nextbtn.addEventListener('click', nextRound)
 
-btn.addEventListener("click", startGame)
-
-
-const restart = document.querySelector("#restart")
+restart.addEventListener('click', restartGame)
 restart.style.visibility = "hidden"
 function restartGame(){
-    restart.style.visibility = "visible"
+    restart.style.visibility = "hidden"
+    question.style.visibility = "hidden"
+    gridItems.forEach(gridItem => {
+        gridItem.style.visibility = "hidden"
+        gridItem.style.backgroundColor = 'rgba(180, 33, 65, 0.975)'
+});
 }
-
-const players = {
+const player = {
     null: 'black',
     '1':'answer'
 };
@@ -37,7 +70,7 @@ const questionArray = [
         "color: magenta;",
         "text-color: aqua;"
     ],
-    correctanswer: "color: magenta;"
+    correctAnswer: "color: magenta;"
 },
 {
     question: "What is the primary purpose of JavaScript?",
@@ -47,27 +80,27 @@ const questionArray = [
         "Creating interactive web content",
         "Maniging database"
     ],
-    correctanswer: "Creating interactive web content"
+    correctAnswer: "Creating interactive web content"
 },
 {
-    question: " numbers = [22,13,34,5,9] sum = 0 for number in numbers: sum += numbers print(sum) ",
+    question: "numbers = [22,13,34,5,9] sum = 0 for number in numbers: sum += numbers print(sum)",
     answers:[
         "83",
         "15",
         "89",
         "103"
     ],
-    correctanswer: "83"
+    correctAnswer: "83"
 },
 {   
     question: "What is correct way to comment out in HTML?",
-    anwsers: [
+    answers: [
         "| This is the correct way to comment out in HTML |",
         "// This is the correct way to coment out in HTML",
         " <== This is the correct to comment out in HTML ==> ",
-        " <-- This is the correct way to comment out in HTML --> "
+        "<!--This is the correct way to comment out in HTML-->"
     ],
-    correctanswer: " <-- This is the correct way to comment out in HTML"
+    correctAnswer:"<!--This is the correct way to comment out in HTML-->"
     
 },
 ];
@@ -113,31 +146,45 @@ const questionArray = [
                     //     } 
                     
                     // }
-                    function playRound(questionIndex){
+                    function checkAnswer(userAnswer, correctAnswer) {
+                        if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                            return true;
+                        } else {
+                            return false;
+                        }   
+                    }  
+                    function playRound(questionIndex) {
+                        console.log('playRound')
                         // console.log(questionIndex)
                         // console.log(questionArray[questionIndex])
-                        console.log(questionArray[questionIndex].answers)
-                        question.innerHTML = questionArray[questionIndex].question
+                        console.log(questionArray[questionIndex].answers);
+                        question.textContent = questionArray[questionIndex].question;
+                        
                         for (let i = 0; i < gridItems.length; i++) {
                             gridItems[i].textContent = questionArray[questionIndex].answers[i];
-                            gridItems[i].addEventListener('click', select);
                             
                         }
+
+                        }
                         function select(event) {
-                            console.log('click')
+                            console.log('click');
                             const clickedItem = event.target;
-                            console.log(clickedItem)
-                            if(clickedItem.innerHTML === questionArray[questionIndex].correctanswer) {
-                                
-                                console.log('correct')
-                                event.target.style.background = 'green'
-                            } else {
-                                event.target.style.background = 'orange'
-                                console.log('incorrect')
-                            } 
-                        } 
-                    }
+                            const userAnswer = clickedItem.textContent;
+                            const correctAnswer = questionArray[round].correctAnswer;
+                            // console.log(clickedItem)
+                        if(clickedItem.textContent === correctAnswer) {
+                                console.log('Correct');
+                                userScore++
+                                console.log('score')
+                                currentScore.textContent = userScore;
+                                clickedItem.style.backgroundColor = 'green';
+                        } else {
+                                console.log('incorrect');
+                                clickedItem.style.backgroundColor = 'orange';
+                                }
+                        }
                     
+                 
                     //  function (e) {
                         //     if(e.target.textContent = 'grid-Items')
                         //         return 
