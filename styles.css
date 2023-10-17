@@ -2,8 +2,8 @@
     box-sizing: border-box;
 }
 body{
-    
-    background-image: url('https://bowties.com/cdn/shop/articles/magenta-color-swirl_1500x1000.jpg?v=1675131101');
+    background-color: rgba(218, 7, 218, 0.786);
+    /* background-image: url('https://bowties.com/cdn/shop/articles/magenta-color-swirl_1500x1000.jpg?v=1675131101'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
