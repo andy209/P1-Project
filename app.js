@@ -4,10 +4,13 @@ const nextbtn = document.querySelector('#next')
 const restart = document.querySelector("#restart")
 const gridItems = document.querySelectorAll(".grid-item")
 const question = document.querySelector("#question")
+const winPopup = document.getElementById('winPopup');
+const closePopup = document.getElementById('closePopup');
+const winConditionScore = 3;
 
 let userScore = 0
 let round 
-
+let playerWinsTheGame = false;
 
 console.log(question)
 question.style.visibility = "hidden"
@@ -20,6 +23,9 @@ gridItems.forEach(gridItem => {
 nextbtn.style.visibility = "hidden"
 
 // console.log(restart)
+function checkWinConditions(){
+    return userScore >= winConditionScore;
+}
 function startGame(){
     round = 0
     userScore = 0
@@ -35,15 +41,18 @@ function nextRound(){
         restart.style.visibility = 'visible' 
         return;
     } else {
-        gridItems.forEach(gridItem => gridItem.style.backgroundColor = 'rgba(180, 33, 65, 0.975)')
-        round++
-        playRound(round)
-        console.log('nextRound')
-    }
-    
-   
+        gridItems.forEach(gridItem => gridItem.style.backgroundColor = 'rgba(180, 33, 65, 0.975)');
+        round++;
+        playRound(round);
 
+        // Check win conditions after each round
+        if (checkWinConditions()) {
+            playerWinsTheGame = true;
+            showWinPopup();
+        }
+    }
 }
+
 startbtnGame.addEventListener("click", startGame)
 nextbtn.addEventListener('click', nextRound)
 
@@ -183,7 +192,16 @@ const questionArray = [
                                 clickedItem.style.backgroundColor = 'orange';
                                 }
                         }
-                    
+                        function showWinPopup() {
+                            winPopup.style.display = 'block';
+                        }
+                        function closeWinPopup() {
+                            winPopup.style.display = 'none';
+                        }
+                        closePopup.addEventListener('click', closeWinPopup);
+                        if (playerWinsTheGame) {
+                            showWinPopup();
+                        }
                  
                     //  function (e) {
                         //     if(e.target.textContent = 'grid-Items')
@@ -191,4 +209,3 @@ const questionArray = [
                         // };
                         
                         // gridItems.forEach(gridItem)=> 
-                        
